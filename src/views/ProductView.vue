@@ -2,6 +2,7 @@
 import { useProductStore } from '@/stores/product'
 import { useRoute } from 'vue-router'
 import { onMounted, ref } from 'vue'
+import AppContentLoader from '@/components/AppContentLoader.vue'
 
 const productStore = useProductStore()
 const route = useRoute()
@@ -17,7 +18,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div v-if="isLoading" class="loader">Loading...</div>
+  <AppContentLoader v-if="isLoading" class="mt-6" />
 
   <div v-else class="mt-6">
     <!-- Add a back button with an arrow -->
