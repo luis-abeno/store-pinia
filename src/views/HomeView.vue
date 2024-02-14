@@ -1,9 +1,9 @@
 <script setup lang="ts">
+import { useProductStore } from '@/stores/product'
+import { onMounted } from 'vue'
 import AppBanner from '@/components/AppBanner.vue'
 import AppProduct from '@/components/AppProduct.vue'
 import AppContentLoader from '@/components/AppContentLoader.vue'
-import { useProductStore } from '@/stores/product'
-import { onMounted } from 'vue'
 
 const productStore = useProductStore()
 
