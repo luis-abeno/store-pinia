@@ -16,7 +16,6 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "@mdi/font": "^7.4.47",
     "pinia": "^2.1.7",
     "vue": "^3.4.15",
     "vue-content-loader": "^2.0.1",
