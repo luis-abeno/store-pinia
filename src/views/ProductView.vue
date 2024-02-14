@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useProductStore } from '@/stores/product'
 import { useRoute } from 'vue-router'
-import { onMounted, ref } from 'vue'
+import { onMounted } from 'vue'
 import AppContentLoader from '@/components/AppContentLoader.vue'
 
 const productStore = useProductStore()
@@ -9,19 +9,13 @@ const route = useRoute()
 
 const productId = route.params.id as string
 
-const isLoading = ref(true)
-
-onMounted(async () => {
-  await productStore.getById(parseInt(productId))
-  isLoading.value = false
-})
+onMounted(async () => await productStore.getById(parseInt(productId)))
 </script>
 
 <template>
-  <AppContentLoader v-if="isLoading" class="mt-6" />
+  <AppContentLoader v-if="productStore.loading" class="mt-6" />
 
   <div v-else class="mt-6">
-    <!-- Add a back button with an arrow -->
     <button @click="$router.back()" class="text-blue-500 mb-4">
       <svg
         xmlns="http://www.w3.org/2000/svg"
