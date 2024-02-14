@@ -26,7 +26,7 @@ export const useProductStore = defineStore('product', {
         this.loading = false
       }
     },
-    async getById(id: number) {
+    async getById(id: number): Promise<void> {
       this.loading = true
       this.error = null
       try {

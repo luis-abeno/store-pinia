@@ -8,7 +8,7 @@ import AppFooter from './components/AppFooter.vue'
   <main>
     <AppNavBar />
 
-    <div class="container m-auto content-area">
+    <div class="container m-auto content-area px-4 sm:px-0">
       <RouterView />
     </div>
 
