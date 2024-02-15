@@ -1,6 +1,6 @@
 // https://on.cypress.io/api
 
-describe('My First Test', () => {
+describe('Test case', () => {
   it('visits the app root url', () => {
     // Listen to GET to /products
     cy.intercept('GET', '/products').as('getProducts')
