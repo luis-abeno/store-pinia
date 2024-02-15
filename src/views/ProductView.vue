@@ -2,7 +2,7 @@
 import { useProductStore } from '@/stores/product'
 import { useRoute } from 'vue-router'
 import { onMounted } from 'vue'
-import AppContentLoader from '@/components/AppContentLoader.vue'
+import AppContentLoader from '@/components/AppContentLoader/AppContentLoader.vue'
 import BackIcon from '@/components/icons/BackIcon.vue'
 
 const productStore = useProductStore()
