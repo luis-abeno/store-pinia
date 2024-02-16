@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import HamburguerMenu from '@/components/icons/HamburguerMenu.vue'
 
 let menuOpened = ref(false)
-var toggleMenu = () => (menuOpened.value = !menuOpened.value)
+const toggleMenu = () => (menuOpened.value = !menuOpened.value)
 </script>
 
 <template>
@@ -24,22 +25,7 @@ var toggleMenu = () => (menuOpened.value = !menuOpened.value)
         </li>
       </ul>
 
-      <button class="block sm:hidden" @click="toggleMenu">
-        <svg
-          class="w-6 h-6 text-white"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16m-7 6h7"
-          ></path>
-        </svg>
-      </button>
+      <button class="block sm:hidden" @click="toggleMenu"><HamburguerMenu /></button>
     </div>
   </nav>
 </template>
