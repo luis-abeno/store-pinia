@@ -14,7 +14,7 @@ var toggleMenu = () => (menuOpened.value = !menuOpened.value)
 
       <ul
         class="flex sm:space-x-6 sm:flex"
-        :class="{ hidden: menuOpened, 'mob-menu': !menuOpened }"
+        :class="{ hidden: !menuOpened, 'mob-menu': menuOpened }"
       >
         <li>
           <router-link to="/" class="nav-link" exact> Home </router-link>
