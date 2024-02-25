@@ -1,10 +1,10 @@
 <template>
   <div>
     <h1>Contact Us</h1>
-    <Form @submit="onSubmit">
+    <Form :validation-schema="schema" @submit="onSubmit">
       <div>
         <label for="email">Email:</label>
-        <Field name="email" type="email" :rules="validateEmail" />
+        <Field name="email" type="email" />
         <ErrorMessage name="email" />
       </div>
 
@@ -15,6 +15,13 @@
 
 <script setup lang="ts">
 import { Form, Field, ErrorMessage } from 'vee-validate'
+
+import * as yup from 'yup'
+
+const schema = yup.object({
+  email: yup.string().email().required(),
+  name: yup.string().required()
+})
 
 function onSubmit(values) {
   console.log('Form submitted', values)
