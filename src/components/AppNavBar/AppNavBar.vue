@@ -23,6 +23,9 @@ const toggleMenu = () => (menuOpened.value = !menuOpened.value)
         <li>
           <router-link to="/about" class="nav-link"> About </router-link>
         </li>
+        <li>
+          <router-link to="/contact" class="nav-link"> Contato </router-link>
+        </li>
       </ul>
 
       <button class="block sm:hidden" @click="toggleMenu"><HamburguerMenu /></button>
