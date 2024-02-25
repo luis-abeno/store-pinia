@@ -4,6 +4,7 @@ import { onMounted } from 'vue'
 import AppBanner from '@/components/AppBanner/AppBanner.vue'
 import AppProduct from '@/components/AppProduct/AppProduct.vue'
 import AppContentLoader from '@/components/AppContentLoader/AppContentLoader.vue'
+import AppModalVue from '@/components/Modal/AppModal.vue'
 
 const productStore = useProductStore()
 
@@ -32,5 +33,9 @@ onMounted(async () => await productStore.fetchProducts())
         </div>
       </div>
     </div>
+
+    <AppModalVue v-if="productStore.error">
+      <h4>Erro</h4>
+    </AppModalVue>
   </section>
 </template>
